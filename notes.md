@@ -150,6 +150,11 @@ AMI with instance store VS. AMI with EBS volume:
 - Hybrid (partially configured) AMIs - Only prerequisite software and utilities are pre-installed, which leads to a longer shelf life for the AMI. This approach provides a balance between boot speed and build time. Rollbacks become easier.
 - OS-only AMI - This approach is fully configurable and upgradeable over time and shortens build times. However, it makes your EC2 instances slow to boot because all required installations and configurations must be run at boot time.
 
+### EC2 Placement options
+- Cluster - Packs instances close together inside an Availability Zone. This strategy enables workloads to achieve low-latency network performance.
+- Partition - Spreads your instances across logical partitions so that groups of instances in one partition do not share the underlying hardware with groups of instances in different partitions. (Single Availibility Zone)
+- Spread - Strictly places a small group of instances across distinct underlying hardware to reduce correlated failures. (Different Avalilbility Zones)
+
 ## ![Static Badge](https://img.shields.io/badge/Best%20Practise-blue) EC2 pricing options
 1. On demand instances - pay for computing power and capacity, by second or hour, no long term commitment
 2. Reserved Instances - 1 or 3 year commitment with massive discount.
@@ -165,6 +170,7 @@ Service that simplifies the creation, maintenance, validation, sharing, and depl
 
 ## ![Static Badge](https://img.shields.io/badge/Service-red) AWS Compute Optimizer
 Service that recommends optimal instance types, analyzes workloads and labels instances accordingly.
+
 
 
 
