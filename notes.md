@@ -173,6 +173,39 @@ Service that recommends optimal instance types, analyzes workloads and labels in
 
 # Module 5 - Database Layer
 
+## ![Static Badge](https://img.shields.io/badge/Service-red) Amazon RDS
+Fully managed database service.
+- **Use Cases** Application that:
+  - have complex data
+  - need to combine and join datasets
+  - need enforced syntax rules
+- database engines used: MS SQL Server, Oracle, MySQL, PostgreSQL, Amazon Aurora, MariaDB.
+- possible to create *Read Replicas* (MySQL, MariaDB, PostgreSQL, Oracle)- updates are asynchronously copied to read replica, you can route read queries to it, so main database is offloaded.
+
+## Multi-AZ deployment
+- high avalilbility
+- failover to standby occurs automatically
+- enhanced durability
+
+## ![Static Badge](https://img.shields.io/badge/Service-red) Amazon Aurora
+Fully managed MySQL and PostgreSQL compatible, relational database.
+- 5 times faster than MySQL, three times faster than PostgreSQL at 1/10th cost.
+- automatically scales up to 64TB per database instance
+- up to 15 read replicas
+- continuous backup to S3
+- possible replication across 3 AZ
+- **Use Cases**: often used for online transaction processing (OLTP). OLTP systems must be able to handle a high volume of concurrent users, and be able to run insert and update requests.
+
+## ![Static Badge](https://img.shields.io/badge/Service-red) Amazon Redshift
+Amazon Redshift is a different AWS relational database offering. It does not run on Amazon RDS. 
+- provides a petabyte-scale data warehouse and data lake analytics.
+- can access data directly in Amazon S3
+- stores very large datasets
+- provides consistently fast performance, even with thousands of concurrent queries
+- you can query open file formats such as Parquet, JSON, Avro, CSV
+- **Use Cases**: typically used to store frequently accessed, highly structured data
+
+## ![Static Badge](https://img.shields.io/badge/Service-red) Amazon DynamoDB
 
 
 
