@@ -113,7 +113,18 @@ AWS Snowmobile is an even larger data transfer option that operates in exabyte s
 - possible to choose different CPU and memory capacity
 - storage options:
   - instance store (deleted when instance is stopped)
-  - ![Static Badge](https://img.shields.io/badge/Service-red) Amazon Elastic Block Storage (Amazon EBS) - isn't deleted even if instance is stopped
+    - for temprorary storage
+    - **Use cases** - caches, bufffers, scratch data 
+  - ![Static Badge](https://img.shields.io/badge/Service-red) **Amazon Elastic Block Storage (Amazon EBS)** - isn't deleted even if instance is stopped
+    - persistent storage, can be attached to any instance in the same vailibility Zone
+    - SSD-backed or HDD-backed can be chosen
+    - instances can be EBS optimized - an EBS-optimized instance has a dedicated network connection between itself and an EBS volume
+    - **Use cases** - stand-alone database, general application data storage
+  - ![Static Badge](https://img.shields.io/badge/Service-red) **Amazon Elastic File System (Amazon EFS)** (possible access from multiple instances)
+    - for Linux, can be used with NFS, scales automatically up or down
+    - **Use cases** - home directories, file system for enterprise applications, database backups, media workflows, big data analytics, web serving and content management
+  - ![Static Badge](https://img.shields.io/badge/Service-red) **Amazon FSxfor Windows File Server** (possible access from multiple instances)
+    - simmilar to EFS, but for Windows   
 - **User data** enables you to provide a script that can be used to initialize it. 
  
 ### Use cases
@@ -137,8 +148,17 @@ AMI with instance store VS. AMI with EBS volume:
 ### AMI vs User data
 - Full AMI - The applicationsand all dependencies are pre-installed, which shortens boot times but increases build times. Full AMIs typically have a shorter lifespan. Consider your rollback strategy.
 - Hybrid (partially configured) AMIs - Only prerequisite software and utilities are pre-installed, which leads to a longer shelf life for the AMI. This approach provides a balance between boot speed and build time. Rollbacks become easier.
-- OS-only AMI – This approach is fully configurable and upgradeable over time and shortens build times. However, it makes your EC2 instances slow to boot because all required installations and configurations must be run at boot time.
+- OS-only AMI - This approach is fully configurable and upgradeable over time and shortens build times. However, it makes your EC2 instances slow to boot because all required installations and configurations must be run at boot time.
 
+## ![Static Badge](https://img.shields.io/badge/Best%20Practise-blue) EC2 pricing options
+1. On demand instances - pay for computing power and capacity, by second or hour, no long term commitment
+2. Reserved Instances - 1 or 3 year commitment with massive discount.
+    - **Use Cases** - good choice if you have predictable or steady-state compute needs.
+4. Savings Plan - same discounts as in Reserved with more flexibility
+5. Spot Instances - instances are used when there are spare ones. There is 2 minutes notification before instance will be stopped.
+    - **Use Cases** - recommended for fault-tolerant, flexible (non-time-critical), stateless workloads.
+7. Dedicated Hosts - are physical servers with instance capacity that is dedicated to your use. They are physically isolated at the level of the host hardware from instances that belong to other AWS accounts.
+    - **Use Cases** -   good choice when you have licensing restrictions for the software that you want to run on Amazon EC2, or when you have specific compliance or regulatory requirements that preclude you from using other deployment options.
 
 ## ![Static Badge](https://img.shields.io/badge/Service-red) EC2 Image Builder
 Service that simplifies the creation, maintenance, validation, sharing, and deployment of images. It provides a simple graphical interface to produce AMIs for use on AWS and to generate VM images for use on premises. It can also validate and test images and it provides version control.
