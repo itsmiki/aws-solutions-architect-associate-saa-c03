@@ -44,6 +44,11 @@
 - Objects in S3 Bucket are private by deafault
 - Support for CORS
 - Amazon S3 is strongly consistent for all new and existing objects in all Regions
+- ![Static Badge](https://img.shields.io/badge/Use%20Cases-green)
+  - Store and distribute web content and media
+  - Host static website
+  - Data store for computation and analytics
+  - Back up and archive critical data
 
 ### Security
 - Using Amazon S3 Block Public Access. These settings override any other policies or object permissions.
@@ -57,11 +62,6 @@
 - Server-side encryption - set the default encryption option on a bucket.
 - Client-side encryption - encrypt the data on the client side before you upload it to Amazon S3.
 
-### Use cases
-- Store and distribute web content and media
-- Host static website
-- Data store for computation and analytics
-- Back up and archive critical data
 
 ### ![Static Badge](https://img.shields.io/badge/Best%20Practise-blue) Versioning
 Versioning is a method of keeping multiple variants of an object in the same bucket. You can use versioning to preserve, retrieve, and restore every version of every object stored in an S3 bucket. Buckets can be in one of three states: unversioned (the default), versioning-enabled, or versioning-suspended. After you enable versioning for a bucket, you can never change it to an unversionedstate. You can, however, suspend versioning on that bucket.
@@ -114,15 +114,15 @@ AWS Snowmobile is an even larger data transfer option that operates in exabyte s
 - storage options:
   - instance store (deleted when instance is stopped)
     - for temprorary storage
-    - **Use cases** - caches, bufffers, scratch data 
+    - ![Static Badge](https://img.shields.io/badge/Use%20Cases-green) caches, buffers, scratch data 
   - ![Static Badge](https://img.shields.io/badge/Service-red) **Amazon Elastic Block Storage (Amazon EBS)** - isn't deleted even if instance is stopped
     - persistent storage, can be attached to any instance in the same vailibility Zone
     - SSD-backed or HDD-backed can be chosen
     - instances can be EBS optimized - an EBS-optimized instance has a dedicated network connection between itself and an EBS volume
-    - **Use cases** - stand-alone database, general application data storage
+    - ![Static Badge](https://img.shields.io/badge/Use%20Cases-green) stand-alone database, general application data storage
   - ![Static Badge](https://img.shields.io/badge/Service-red) **Amazon Elastic File System (Amazon EFS)** (possible access from multiple instances)
     - for Linux, can be used with NFS, scales automatically up or down
-    - **Use cases** - home directories, file system for enterprise applications, database backups, media workflows, big data analytics, web serving and content management
+    - ![Static Badge](https://img.shields.io/badge/Use%20Cases-green) home directories, file system for enterprise applications, database backups, media workflows, big data analytics, web serving and content management
   - ![Static Badge](https://img.shields.io/badge/Service-red) **Amazon FSxfor Windows File Server** (possible access from multiple instances)
     - simmilar to EFS, but for Windows   
 - **User data** enables you to provide a script that can be used to initialize it. 
@@ -158,12 +158,12 @@ AMI with instance store VS. AMI with EBS volume:
 ## ![Static Badge](https://img.shields.io/badge/Best%20Practise-blue) EC2 pricing options
 1. On demand instances - pay for computing power and capacity, by second or hour, no long term commitment
 2. Reserved Instances - 1 or 3 year commitment with massive discount.
-    - **Use Cases** - good choice if you have predictable or steady-state compute needs.
+    - ![Static Badge](https://img.shields.io/badge/Use%20Cases-green) good choice if you have predictable or steady-state compute needs.
 4. Savings Plan - same discounts as in Reserved with more flexibility
 5. Spot Instances - instances are used when there are spare ones. There is 2 minutes notification before instance will be stopped.
-    - **Use Cases** - recommended for fault-tolerant, flexible (non-time-critical), stateless workloads.
+    - ![Static Badge](https://img.shields.io/badge/Use%20Cases-green) recommended for fault-tolerant, flexible (non-time-critical), stateless workloads.
 7. Dedicated Hosts - are physical servers with instance capacity that is dedicated to your use. They are physically isolated at the level of the host hardware from instances that belong to other AWS accounts.
-    - **Use Cases** -   good choice when you have licensing restrictions for the software that you want to run on Amazon EC2, or when you have specific compliance or regulatory requirements that preclude you from using other deployment options.
+    - ![Static Badge](https://img.shields.io/badge/Use%20Cases-green) good choice when you have licensing restrictions for the software that you want to run on Amazon EC2, or when you have specific compliance or regulatory requirements that preclude you from using other deployment options.
 
 ## ![Static Badge](https://img.shields.io/badge/Service-red) EC2 Image Builder
 Service that simplifies the creation, maintenance, validation, sharing, and deployment of images. It provides a simple graphical interface to produce AMIs for use on AWS and to generate VM images for use on premises. It can also validate and test images and it provides version control.
@@ -175,7 +175,7 @@ Service that recommends optimal instance types, analyzes workloads and labels in
 
 ## ![Static Badge](https://img.shields.io/badge/Service-red) Amazon RDS
 Fully managed database service.
-- **Use Cases** Application that:
+- ![Static Badge](https://img.shields.io/badge/Use%20Cases-green) Application that:
   - have complex data
   - need to combine and join datasets
   - need enforced syntax rules
@@ -194,7 +194,7 @@ Fully managed MySQL and PostgreSQL compatible, relational database.
 - up to 15 read replicas
 - continuous backup to S3
 - possible replication across 3 AZ
-- **Use Cases**: often used for online transaction processing (OLTP). OLTP systems must be able to handle a high volume of concurrent users, and be able to run insert and update requests.
+- ![Static Badge](https://img.shields.io/badge/Use%20Cases-green) often used for online transaction processing (OLTP). OLTP systems must be able to handle a high volume of concurrent users, and be able to run insert and update requests.
 
 ## ![Static Badge](https://img.shields.io/badge/Service-red) Amazon Redshift
 Amazon Redshift is a different AWS relational database offering. It does not run on Amazon RDS. 
@@ -203,7 +203,7 @@ Amazon Redshift is a different AWS relational database offering. It does not run
 - stores very large datasets
 - provides consistently fast performance, even with thousands of concurrent queries
 - you can query open file formats such as Parquet, JSON, Avro, CSV
-- **Use Cases**: typically used to store frequently accessed, highly structured data
+- ![Static Badge](https://img.shields.io/badge/Use%20Cases-green) typically used to store frequently accessed, highly structured data
 
 ## ![Static Badge](https://img.shields.io/badge/Service-red) Amazon DynamoDB
 
