@@ -96,3 +96,69 @@ AWS Snowball is a petabyte-scale data transport option that doesn’t require yo
 
 ## ![Static Badge](https://img.shields.io/badge/Service-red) AWS Snowmobile
 AWS Snowmobile is an even larger data transfer option that operates in exabyte scale. An exabyte is 1 million terabytes or 1 billion gigabytes.
+
+## Choosing Region
+- consider data privacy laws and your regulatory compliance requirements
+- choose a region that provides low latency for the users
+- different service and features availibility
+- costs vary by region
+
+# Module 4 - Adding a Computer Layer
+
+## ![Static Badge](https://img.shields.io/badge/Service-red) Amazon EC2
+- provides virtual machines (servers)
+- provisions servers in minutes
+- can automatically scale capacity up or down as you need
+- you pay only for the capacity you use
+- possible to choose different CPU and memory capacity
+- storage options:
+  - instance store (deleted when instance is stopped)
+  - ![Static Badge](https://img.shields.io/badge/Service-red) Amazon Elastic Block Storage (Amazon EBS) - isn't deleted even if instance is stopped
+- **User data** enables you to provide a script that can be used to initialize it. 
+ 
+### Use cases
+- complete control over resources is needed
+- optimizing costs - on-demand instances, reserved instances, spot instances, saving plans
+- ability to run any type of workload
+
+### AMI
+AMI is only available in certain region.
+AMI includes:
+- template for root volume
+- launch permissions
+- block device mappings (specifies storage volumes attached to EC2)
+AMI with instance store VS. AMI with EBS volume:
+- EBS boots faster
+- EBS max size 16TiB, IS 10 GiB
+- EBS can be stopped, IS only reboot/terminate
+- EBS instance type can be changed while stopped, IS can't be changed
+- different costs
+
+### AMI vs User data
+- Full AMI - The applicationsand all dependencies are pre-installed, which shortens boot times but increases build times. Full AMIs typically have a shorter lifespan. Consider your rollback strategy.
+- Hybrid (partially configured) AMIs - Only prerequisite software and utilities are pre-installed, which leads to a longer shelf life for the AMI. This approach provides a balance between boot speed and build time. Rollbacks become easier.
+- OS-only AMI – This approach is fully configurable and upgradeable over time and shortens build times. However, it makes your EC2 instances slow to boot because all required installations and configurations must be run at boot time.
+
+
+## ![Static Badge](https://img.shields.io/badge/Service-red) EC2 Image Builder
+Service that simplifies the creation, maintenance, validation, sharing, and deployment of images. It provides a simple graphical interface to produce AMIs for use on AWS and to generate VM images for use on premises. It can also validate and test images and it provides version control.
+
+## ![Static Badge](https://img.shields.io/badge/Service-red) AWS Compute Optimizer
+Service that recommends optimal instance types, analyzes workloads and labels instances accordingly.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
