@@ -103,7 +103,7 @@ AWS Snowmobile is an even larger data transfer option that operates in exabyte s
 - different service and features availibility
 - costs vary by region
 
-# Module 4 - Adding a Computer Layer
+# Module 4 - Computer Layer
 
 ## ![Static Badge](https://img.shields.io/badge/Service-red) Amazon EC2
 - provides virtual machines (servers)
@@ -171,7 +171,7 @@ Service that simplifies the creation, maintenance, validation, sharing, and depl
 ## ![Static Badge](https://img.shields.io/badge/Service-red) AWS Compute Optimizer
 Service that recommends optimal instance types, analyzes workloads and labels instances accordingly.
 
-
+# Module 5 - Database Layer
 
 
 
