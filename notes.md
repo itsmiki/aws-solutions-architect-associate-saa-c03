@@ -207,13 +207,32 @@ Amazon Redshift is a different AWS relational database offering. It does not run
 
 ## ![Static Badge](https://img.shields.io/badge/Service-red) Amazon DynamoDB
 - It offers consistent, single-digit millisecond response times
-- You can build applications with virtually unlimited throughput
+- You can build applications with virtually unlimited throughput (more than 20 million requests per secon)
 - Serverless
 - It supports ACID transactions
 - It encrypts all data at rest by default
-- Multi-Region replication (global tables) is available
+- Multi-Region replication (global tables) is available 
 - It provides fine-grained identity and access control
 - You can perform full backups of data with no performance impact
+- ![Static Badge](https://img.shields.io/badge/Use%20Cases-green) Applications that:
+  - have simple high-volume data 
+  - must scale quickly
+  - don't need complex joints (NoSQL)
+  - require ultra high throughput and low latency
+- ![Static Badge](https://img.shields.io/badge/Use%20Cases-green) Examples:
+  - leaderboard in game (constantly updated with highscores)
+  - shopping cart functionality
+- Consistency options:
+  -  Eventually consistent (consistency within 1 second, data may be 1 second old when read) - default
+  -  Strong consistency (response reflects the updates from all previous write operations that were successful) - optional 
+
+## Database security 
+
+
+
+
+
+
 
 
 
