@@ -206,6 +206,7 @@ Amazon Redshift is a different AWS relational database offering. It does not run
 - ![Static Badge](https://img.shields.io/badge/Use%20Cases-green) typically used to store frequently accessed, highly structured data
 
 ## ![Static Badge](https://img.shields.io/badge/Service-red) Amazon DynamoDB
+DynamoBD is a non-relational database.
 - It offers consistent, single-digit millisecond response times
 - You can build applications with virtually unlimited throughput (more than 20 million requests per secon)
 - Serverless
@@ -244,7 +245,10 @@ Amazon Redshift is a different AWS relational database offering. It does not run
 ## Migrating data into AWS databases
 
 ### ![Static Badge](https://img.shields.io/badge/Service-red) AWS Database Migration Service (AWS DMS)
-
+AWS DMS supports migration between the most widely used databases.
+- supports both homogenous (same engine) migrations and heterogeneous (different engines) migrations
+- performs one-time migration as well as continuous data replication
+- can be used with AWS Snowball Edge to transfer large databases without using Internet
 
 
 
