@@ -206,12 +206,14 @@ Amazon Redshift is a different AWS relational database offering. It does not run
 - ![Static Badge](https://img.shields.io/badge/Use%20Cases-green) typically used to store frequently accessed, highly structured data
 
 ## ![Static Badge](https://img.shields.io/badge/Service-red) Amazon DynamoDB
-
-
-
-
-
-
+- It offers consistent, single-digit millisecond response times
+- You can build applications with virtually unlimited throughput
+- Serverless
+- It supports ACID transactions
+- It encrypts all data at rest by default
+- Multi-Region replication (global tables) is available
+- It provides fine-grained identity and access control
+- You can perform full backups of data with no performance impact
 
 
 
