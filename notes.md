@@ -203,6 +203,7 @@ Amazon Redshift is a different AWS relational database offering. It does not run
 - stores very large datasets
 - provides consistently fast performance, even with thousands of concurrent queries
 - you can query open file formats such as Parquet, JSON, Avro, CSV
+- doesn't scale automatically and doesn't support read replicas
 - ![Static Badge](https://img.shields.io/badge/Use%20Cases-green) typically used to store frequently accessed, highly structured data
 
 ## ![Static Badge](https://img.shields.io/badge/Service-red) Amazon DynamoDB
