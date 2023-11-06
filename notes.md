@@ -228,11 +228,22 @@ Amazon Redshift is a different AWS relational database offering. It does not run
 
 ## Database security 
 
+### RDS
+- run your RDS instances in a virtual private cloud (VPC)
+- Use AWS Identity and Access Management (IAM) policies for authentication and to control access.0
+- Configure security groups to limit connections.
+- Use SSL connections to ensure that all communication to and from your database is secured
+- Enable event notifications on important events that can occur on your RDS instance
+- Use Amazon RDS encryption to encrypt your data and database snapshots
 
+### DynamoDB
+- use **IAM roles** to secure authentication, and use **IAM policies** to define access permissions
+- encrypt data as close as possible to its origin so that your data is protected throughout its lifecycle
+- DynamoDB provides certain security features by default: protects user data stored at rest and also data in transit between on-premises clients and DynamoDB, and between DynamoDB and other AWS resources within the same AWS Region
 
+## Migrating data into AWS databases
 
-
-
+### ![Static Badge](https://img.shields.io/badge/Service-red) AWS Database Migration Service (AWS DMS)
 
 
 
