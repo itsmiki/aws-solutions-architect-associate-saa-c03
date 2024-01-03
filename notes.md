@@ -254,7 +254,27 @@ AWS DMS supports migration between the most widely used databases.
 # Module 6 - Creating a networking Environment
 
 ## ![Static Badge](https://img.shields.io/badge/Service-red) Amazon VPC (Virtual Private Cloud)
+A service that enables you to provision a logically isolated section of the AWS Cloud where you can launch your AWS resources. You can select your own IP address range, create subnets, and configure route tables and network gateways.
+- VPC belongs to a single Region, but it can host resources deployed in every Availibility Zone from this Region
+- When you create a VPC, you provide the set of private IP addresses that you want instances in your VPC to use. You can assign block sizes of between /28 (16 IP addresses) and /16 (65,536 IP addresses).
+- VPC supports IPv4 and IPv6 addressing
+- VPC can operate in dual-stack mode: your resources can communicate over IPv4, or IPv6, or both. Pv4 and IPv6 addresses are independent of each other, routing must be configured independently.
 
+### Dividing VPC
+- A subnet is a segment of a VPC’s IP address range where you can allocate a group of resource.
+- Subnets are not isolation boundaries around your application, they are only containers for routing policies.
+- Subnet CIDR blocks cannot overlap.
+- Each subnet must reside entirely within one Availability Zone.
+- AWS reserves the first four IP addresses and the last IP address in each subnet CIDR block:
+  - 10.0.0.0: Network address
+  - 10.0.0.1: VPC local router
+  - 10.0.0.2: Domain Name System (DNS) resolution
+  - 10.0.0.3: Future use
+  - 10.0.0.255: Network broadcast address 
 
-
-
+## ![Static Badge](https://img.shields.io/badge/Best%20Practise-blue) VPC Best practises
+- Create one subnet per available Availability Zone for each group of hosts that have unique routing requirements.
+- Divide your VPC network range evenly across all available Availability Zones in a Region.
+- Do not allocate all network addresses at once. Instead, ensure that you reserve some address space for future use.
+- Size your VPC CIDR and subnets to support significant growth for the expected workloads.
+- Ensure that your VPC network range (CIDR block) does not overlap with your organization’s other private network ranges
