@@ -253,7 +253,7 @@ AWS DMS supports migration between the most widely used databases.
 
 # Module 6 - Creating a networking Environment
 
-
+## ![Static Badge](https://img.shields.io/badge/Service-red) Amazon VPC (Virtual Private Cloud)
 
 
 
