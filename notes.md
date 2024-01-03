@@ -272,9 +272,39 @@ A service that enables you to provision a logically isolated section of the AWS 
   - 10.0.0.3: Future use
   - 10.0.0.255: Network broadcast address 
 
-## ![Static Badge](https://img.shields.io/badge/Best%20Practise-blue) VPC Best practises
+### ![Static Badge](https://img.shields.io/badge/Best%20Practise-blue) VPC Best practises
 - Create one subnet per available Availability Zone for each group of hosts that have unique routing requirements.
 - Divide your VPC network range evenly across all available Availability Zones in a Region.
 - Do not allocate all network addresses at once. Instead, ensure that you reserve some address space for future use.
 - Size your VPC CIDR and subnets to support significant growth for the expected workloads.
 - Ensure that your VPC network range (CIDR block) does not overlap with your organization’s other private network ranges
+- ![Static Badge](https://img.shields.io/badge/Use%20Cases-green) When you design and create your network environment, there are a limited number of use cases where a single VPC environment might be appropriate:
+  - Small, single applications managed by a small team
+  - High performance computing (HPC) environments (such as physics simulations) - a single VPC environment has lower latency than one spread across multiple VPCs
+  - Identity management environments—a single VPC might provide best security.
+
+### Multiple VPCs & Multiple accounts
+**Multiple VPCs** -  best suited for a single team or organization that maintains full control over the provisioning and management of all resources in each application environment. 
+**Multiple accounts** - best suited for enterprise customers or organizations that deploy applications managed across multiple teams.
+Be aware of Amazon VPC quotas. The default quota is 5 VPCs per Region. However, you can request an increase for this quota.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
