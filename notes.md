@@ -260,8 +260,8 @@ A service that enables you to provision a logically isolated section of the AWS 
 - VPC supports IPv4 and IPv6 addressing
 - VPC can operate in dual-stack mode: your resources can communicate over IPv4, or IPv6, or both. Pv4 and IPv6 addresses are independent of each other, routing must be configured independently.
 
-### Dividing VPC
-- A subnet is a segment of a VPC’s IP address range where you can allocate a group of resource.
+### Dividing VPC (subnets)
+- Subnet is a segment of a VPC’s IP address range where you can allocate a group of resource.
 - Subnets are not isolation boundaries around your application, they are only containers for routing policies.
 - Subnet CIDR blocks cannot overlap.
 - Each subnet must reside entirely within one Availability Zone.
@@ -290,10 +290,14 @@ A service that enables you to provision a logically isolated section of the AWS 
 
 Be aware of Amazon VPC quotas. The default quota is 5 VPCs per Region. However, you can request an increase for this quota.
 
+### Subnets
+**Public subnet** - to make a subnet public, you must first create an internet gateway and attach it to your VPC. An **internet gateway** serves two purposes. First, it provides a target in your VPC route tables for internet-routable traffic. Second, the internet gateway performs network address translation (NAT) for instances that were assigned public IPv4 addresses.
 
+Creating a public subnet:
+1. Create an internet gateway and attach it to the VPC.
+2. Update or create a route table - to send non-local traffic through the internet gateway to the internet, create a route with destination 0.0.0.0/0 and target <igw-id>in the route table associated with the subnet.
 
-
-
+**Elastic IP** - a static and public IPv4 address. You can associate an Elastic IP address with any instance or elastic network interface for any VPC in your account. Elastic IP address, you can mask the failure of an instance by rapidly remapping the address to another instance in your VPC. Associating the Elastic IP address with the network interface has an advantage over associating it directly with the instance. You can move all of the attributes of the network interface from one instance to another in a single step.
 
 
 
