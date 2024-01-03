@@ -284,8 +284,10 @@ A service that enables you to provision a logically isolated section of the AWS 
   - Identity management environments—a single VPC might provide best security.
 
 ### Multiple VPCs & Multiple accounts
-**Multiple VPCs** -  best suited for a single team or organization that maintains full control over the provisioning and management of all resources in each application environment. 
+**Multiple VPCs** -  best suited for a single team or organization that maintains full control over the provisioning and management of all resources in each application environment.
+
 **Multiple accounts** - best suited for enterprise customers or organizations that deploy applications managed across multiple teams.
+
 Be aware of Amazon VPC quotas. The default quota is 5 VPCs per Region. However, you can request an increase for this quota.
 
 
