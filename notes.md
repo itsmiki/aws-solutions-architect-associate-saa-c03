@@ -290,7 +290,7 @@ A service that enables you to provision a logically isolated section of the AWS 
 
 Be aware of Amazon VPC quotas. The default quota is 5 VPCs per Region. However, you can request an increase for this quota.
 
-### Subnets
+### VPC elements and configuration
 **Public subnet** - to make a subnet public, you must first create an internet gateway and attach it to your VPC. An **internet gateway** serves two purposes. First, it provides a target in your VPC route tables for internet-routable traffic. Second, the internet gateway performs network address translation (NAT) for instances that were assigned public IPv4 addresses.
 
 Creating a public subnet:
@@ -299,9 +299,15 @@ Creating a public subnet:
 
 **Elastic IP** - a static and public IPv4 address. You can associate an Elastic IP address with any instance or elastic network interface for any VPC in your account. Elastic IP address, you can mask the failure of an instance by rapidly remapping the address to another instance in your VPC. Associating the Elastic IP address with the network interface has an advantage over associating it directly with the instance. You can move all of the attributes of the network interface from one instance to another in a single step.
 
+**Private subnet** - **NAT gateway** enables instances in a private subnet to connect to the internet or other AWS services, but prevents the internet from initiating a connection with those instances.
 
+Connecting private subnet to the internet:
+1. Create NAT gateway and attach it to PUBLIC subnet.
+2. Create an Elastic IP address and associate it with NAT Gateway.
+3. Update or create a route table associated with PRIVATE subnet to point internet-bound traffic to the NAT gateway.
 
-
+#### ![Static Badge](https://img.shields.io/badge/Use%20Cases-green) Subnets
+ 
 
 
 
