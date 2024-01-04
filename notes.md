@@ -296,7 +296,9 @@ Be aware of Amazon VPC quotas. The default quota is 5 VPCs per Region. However, 
 
 Creating a public subnet:
 1. Create an internet gateway and attach it to the VPC.
-2. Update or create a route table - to send non-local traffic through the internet gateway to the internet, create a route with destination 0.0.0.0/0 and target <igw-id>in the route table associated with the subnet.
+2. Add a route to your subnet’s route table that directs internet-bound traffic to the internet gateway.
+3. Make sure that your instances have public IP or Elastic IP addresses.
+4. Make sure that your security groups and network ACLs allow relevant traffic to flow.
 
 **Elastic IP** - a static and public IPv4 address. You can associate an Elastic IP address with any instance or elastic network interface for any VPC in your account. Elastic IP address, you can mask the failure of an instance by rapidly remapping the address to another instance in your VPC. Associating the Elastic IP address with the network interface has an advantage over associating it directly with the instance. You can move all of the attributes of the network interface from one instance to another in a single step.
 
@@ -319,7 +321,49 @@ Connecting private subnet to the internet:
 
 ## Security 
 
-### Security Groups
+### Security Groups 
+Security group is a stateful firewall that controls inbound and outbound traffic. Stateful means that return traffic is automatically allowed, regardless of any rules.
+- Acts at instance level or network interface
+- Traffic can be restricted by any internet protocol, service port, and source or destination IP address (individual IP address or CIDR block).
+- By default security group allows all outbound traffic and no inbound traffic.
+- It is only possible to add *allow* rules, everything else is denied by default.
+- ![Static Badge](https://img.shields.io/badge/Best%20Practise-blue) Create security group for every tier in the application, create inbound rules only form certain security groups so traffic can go only one way. The security groups act as firewalls to prevent a security breach in one tier from automatically providing subnet-wide access of all resources to the compromised client.
+
+### Network ACLs
+Stateless firewall that requires explicit rules for inbound and outbound traffic.
+- Acts at subnet level.
+- By default allows all inbound and outbound traffic.
+- Optional layer of security, cts as a firewall for controlling traffic in and out of one or more subnets.
+- You can associate a network ACL with multiple subnets. However, a subnet can be associated with only one network ACL at a time.  If you don't explicitly associate a subnet with a network ACL, the subnet is automatically associated with the default network ACL. Each subnet in your VPC must be associated with a network ACL.
+- By default, each custom network ACL denies all inbound and outbound traffic until you add rules.
+
+### ![Static Badge](https://img.shields.io/badge/Best%20Practise-blue) Best practise
+As a best practice, you should secure your infrastructure with multiple layers of defense.
+- Define both security groups and network ACLs to further protect your infrastructure at the infrastructure and subnet levels, respectively.
+- When you implement both network ACLs and security groups as a defense-in-depth way of controlling traffic, a mistake in the configuration of one of these controls will not expose the host to unwanted traffic.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
