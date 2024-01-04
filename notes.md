@@ -138,6 +138,7 @@ AMI includes:
 - template for root volume
 - launch permissions
 - block device mappings (specifies storage volumes attached to EC2)
+
 AMI with instance store VS. AMI with EBS volume:
 - EBS boots faster
 - EBS max size 16TiB, IS 10 GiB
