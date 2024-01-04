@@ -307,11 +307,18 @@ Connecting private subnet to the internet:
 3. Update or create a route table associated with PRIVATE subnet to point internet-bound traffic to the NAT gateway.
 
 #### ![Static Badge](https://img.shields.io/badge/Use%20Cases-green) Subnets
- 
+- Private Subnets - Data Store Instances, Batch-processing instances, Backend instances, Web Application Instances (Load Balancer in Public Subnet)
+- Public Subnet - Web Application Instances (In some environments, you must attach web application instances to Elastic IP addresses directly (though you can also attach an Elastic IP address to a load balancer). In those cases, web application instances must be in a public subnet.)
 
+### Bastion Host
+- A bastion host is a server that provides access to a private network from an external network, such as the internet.
+- Typically runs on an EC2 instance in a public subnet of your VPC.
+- Instances in the private subnet are in a security group that allows SSH access from the security group attached to the bastion host. Bastion host users connect to the bastion host so they can connect to instances in private subnet.
+- The bastion host should be the only source of SSH traffic to your Linux instances.
 
+## Security 
 
-
+### Security Groups
 
 
 
