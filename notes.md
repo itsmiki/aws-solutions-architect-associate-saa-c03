@@ -342,10 +342,18 @@ As a best practice, you should secure your infrastructure with multiple layers o
 - Define both security groups and network ACLs to further protect your infrastructure at the infrastructure and subnet levels, respectively.
 - When you implement both network ACLs and security groups as a defense-in-depth way of controlling traffic, a mistake in the configuration of one of these controls will not expose the host to unwanted traffic.
 
+# Module 7 - Connecting Networks
 
+## ![Static Badge](https://img.shields.io/badge/Service-red) AWS Site-to-Site VPN
+- Used to securely connect your on-premises network or branch office site to your VPC.
+- Each connection uses IPSec protocol in order to create encrypted tunnels between locations.
+- Can be connected to Virtual Private Gateway or ![Static Badge](https://img.shields.io/badge/Service-red) AWS Transit Gateway.
+- Provides two VPN tunnels across multiple Availability Zones that you can use simultaneously for high availability. You can stream primary traffic through the first tunnel and use the second tunnel for redundancy. If one tunnel goes down, traffic will still get delivered to your VPC.
+- Charged for each VPN connection-hour.
 
-
-
+When you create a Site-to-Site VPN connection, you must specify the type of routing that you plan to use and you must update the route table for your subnet.
+- If your device supprts it, use BGP, specify dynamic routing when configuring Site-to-Site VPN. Dynamic routing supports up to 100 propagated routes per route table.
+- if your device does not support BGP, use static routing. It requires that you specify the routes (IP prefixes) for your network that should be communicated to the virtual private gateway. Static routing supports 50 non-propagated routes per route table by default, up to a maximum of 1,000 non-propagated routes.
 
 
 
