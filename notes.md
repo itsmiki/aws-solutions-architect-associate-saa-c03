@@ -354,6 +354,7 @@ As a best practice, you should secure your infrastructure with multiple layers o
 When you create a Site-to-Site VPN connection, you must specify the type of routing that you plan to use and you must update the route table for your subnet.
 - If your device supprts it, use BGP, specify dynamic routing when configuring Site-to-Site VPN. Dynamic routing supports up to 100 propagated routes per route table.
 - if your device does not support BGP, use static routing. It requires that you specify the routes (IP prefixes) for your network that should be communicated to the virtual private gateway. Static routing supports 50 non-propagated routes per route table by default, up to a maximum of 1,000 non-propagated routes.
+-  ![Static Badge](https://img.shields.io/badge/Use%20Cases-green) Use BGP-capable devices because the BGP protocol offers robust liveness detection checks that can assist failover to the second VPN tunnel if the first tunnel goes down.
 
 
 
