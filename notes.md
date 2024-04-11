@@ -352,13 +352,16 @@ As a best practice, you should secure your infrastructure with multiple layers o
 - Charged for each VPN connection-hour.
 
 When you create a Site-to-Site VPN connection, you must specify the type of routing that you plan to use and you must update the route table for your subnet.
-- If your device supprts it, use BGP, specify dynamic routing when configuring Site-to-Site VPN. Dynamic routing supports up to 100 propagated routes per route table.
+- If your device supports it, use BGP, specify dynamic routing when configuring Site-to-Site VPN. Dynamic routing supports up to 100 propagated routes per route table.
 - if your device does not support BGP, use static routing. It requires that you specify the routes (IP prefixes) for your network that should be communicated to the virtual private gateway. Static routing supports 50 non-propagated routes per route table by default, up to a maximum of 1,000 non-propagated routes.
 -  ![Static Badge](https://img.shields.io/badge/Use%20Cases-green) Use BGP-capable devices because the BGP protocol offers robust liveness detection checks that can assist failover to the second VPN tunnel if the first tunnel goes down.
 
+### Connecting multiple VPNs
+-  To maintain high availability of your customer gateway, you can set up redundant customer gateway devices. Each device will advertise the same prefix fe. 0.0.0.0/0 to the Virtual Private Gateway (BGP is used for routing). If one gateway fails VPG will direct traffic the other customer gateway.
+-  It is possible to establish multiple customer gateway devices to one virtual private gateway using ![Static Badge](https://img.shields.io/badge/Service-red). It can be used to provide redundancy and failover.
+- AWS VPN CloudHub operates on a hub-and-spoke model to enable multiple sites to access your VPC or to securely access each other. Each customer gateway device needs to advertise site-specific prefix such as 10.0.0.0/24, 10.0.1.0/24.
 
-
-
+## ![Static Badge](https://img.shields.io/badge/Service-red) AWS Direct Connect
 
 
 
